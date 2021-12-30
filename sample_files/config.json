@@ -1,0 +1,1 @@
+{"auth_token": "b3ab540c7facb7dbd0b833037617b640137933", "snowflake_username": "anveshanlogin", "password":"", "account":"CF07222.ap-south-1.aws", "warehouse":"COMPUTE_WH", "database":"ANVESHAN_DB", "role":"ACCOUNTADMIN", "source_schema": "PUBLIC", "source_table":"CORE_SHIPMENT", "column_name":"SHIPMENT_PROVIDER"}

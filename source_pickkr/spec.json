@@ -1,0 +1,56 @@
+{
+  "documentationUrl": "https://docsurl.com",
+  "connectionSpecification": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Unicommerce Connector Spec",
+    "type": "object",
+    "required": ["auth_token", "snowflake_username", "password", "account", "warehouse", "database", "role", "source_schema", "source_table", "column_name"],
+    "additionalProperties": false,
+    "properties": {
+      "auth_token": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "snowflake_username": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "password": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "account": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "warehouse": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "database": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "role": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "source_table_name": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "source_schema": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "source_table": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      },
+      "column_name": {
+        "type": "string",
+        "description": "auth_token is the name of the organization"
+      }
+    }
+  }
+}

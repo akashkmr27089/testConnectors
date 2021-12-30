@@ -1,0 +1,11 @@
+Testing Unicommerce
+{"type": "LOG", "log": {"level": "INFO", "message": "Starting syncing SourcePickkr"}}
+
+SyncMode.incremental
+{"type": "LOG", "log": {"level": "INFO", "message": "Syncing stream: get_orders_by_ids "}}
+anveshanlogin CF07222.ap-south-1.aws COMPUTE_WH ANVESHAN_DB ACCOUNTADMIN
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& <snowflake.connector.connection.SnowflakeConnection object at 0x119af8580>
+SyncMode.incremental incremental
+SELECT * FROM "ANVESHAN_DB"."PUBLIC"."CORE_SHIPMENT" WHERE SHIPMENT_PROVIDER ILIKE '%pickrr%' and to_date(CREATED_AT) > to_date('2021-10-25T12:00:00Z') and to_date(CREATED_AT) < to_date('2021-11-26T12:00:00Z') order by CREATED_AT 
+{"type": "LOG", "log": {"level": "INFO", "message": "Finished syncing SourcePickkr"}}
+{"type": "LOG", "log": {"level": "INFO", "message": "SourcePickkr runtimes:\n"}}

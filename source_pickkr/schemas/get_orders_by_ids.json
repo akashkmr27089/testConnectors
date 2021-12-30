@@ -1,0 +1,930 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": ["null", "object"],
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "properties": {
+        "courier_tracking_id": {
+            "$id": "#/properties/courier_tracking_id",
+            "type": ["null", "string"],
+            "title": "The courier_tracking_id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "1531516400284"
+            ]
+        },
+        "auth_token": {
+            "$id": "#/properties/auth_token",
+            "type": ["null", "string"],
+            "title": "The auth_token schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "breadth": {
+            "$id": "#/properties/breadth",
+            "type": ["null", "string"],
+            "title": "The breadth schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                10
+            ]
+        },
+        "client_extra_var": {
+            "$id": "#/properties/client_extra_var",
+            "type": ["null", "string"],
+            "title": "The client_extra_var schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": null,
+            "examples": [
+                null
+            ]
+        },
+        "client_order_id": {
+            "$id": "#/properties/client_order_id",
+            "type": ["null", "string"],
+            "title": "The client_order_id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "38181"
+            ]
+        },
+        "company_name": {
+            "$id": "#/properties/company_name",
+            "type": ["null", "string"],
+            "title": "The company_name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "courier_input_weight": {
+            "$id": "#/properties/courier_input_weight",
+            "type":["null", "string"],
+            "title": "The courier_input_weight schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": null,
+            "examples": [
+                null
+            ]
+        },
+        "courier_parent_name": {
+            "$id": "#/properties/courier_parent_name",
+            "type": ["null", "string"],
+            "title": "The courier_parent_name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Delhivery"
+            ]
+        },
+        "courier_used": {
+            "$id": "#/properties/courier_used",
+            "type": ["null", "string"],
+            "title": "The courier_used schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Delhivery"
+            ]
+        },
+        "created_at": {
+            "$id": "#/properties/created_at",
+            "type": ["null", "string"],
+            "title": "The created_at schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2021-10-07T15:19:22.117000"
+            ]
+        },
+        "dispatch_mode": {
+            "$id": "#/properties/dispatch_mode",
+            "type": ["null", "string"],
+            "title": "The dispatch_mode schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Surface"
+            ]
+        },
+        "edd_stamp": {
+            "$id": "#/properties/edd_stamp",
+            "type": ["null", "string"],
+            "title": "The edd_stamp schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "05 Oct 2021, 18:29"
+            ]
+        },
+        "err": {
+            "$id": "#/properties/err",
+            "type":["null", "string"],
+            "title": "The err schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": null,
+            "examples": [
+                null
+            ]
+        },
+        "height": {
+            "$id": "#/properties/height",
+            "type": ["null", "string"],
+            "title": "The height schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                10
+            ]
+        },
+        "hsn_code": {
+            "$id": "#/properties/hsn_code",
+            "type":["null", "string"],
+            "title": "The hsn_code schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": null,
+            "examples": [
+                null
+            ]
+        },
+        "info": {
+            "$id": "#/properties/info",
+            "type": ["null", "object"],
+            "title": "The info schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "properties": {
+                "from_state": {
+                    "$id": "#/properties/info/properties/from_state",
+                    "type": ["null", "string"],
+                    "title": "The from_state schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "CALIFORNIA"
+                    ]
+                },
+                "invoice_value": {
+                    "$id": "#/properties/info/properties/invoice_value",
+                    "type": ["null", "string"],
+                    "title": "The invoice_value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "from_name": {
+                    "$id": "#/properties/info/properties/from_name",
+                    "type": ["null", "string"],
+                    "title": "The from_name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "test_123"
+                    ]
+                },
+                "to_address": {
+                    "$id": "#/properties/info/properties/to_address",
+                    "type": ["null", "string"],
+                    "title": "The to_address schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "to_state": {
+                    "$id": "#/properties/info/properties/to_state",
+                    "type": ["null", "string"],
+                    "title": "The to_state schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "lasVegas"
+                    ]
+                },
+                "courier_name": {
+                    "$id": "#/properties/info/properties/courier_name",
+                    "type": ["null", "string"],
+                    "title": "The courier_name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "delhivery_bulk"
+                    ]
+                },
+                "to_pincode": {
+                    "$id": "#/properties/info/properties/to_pincode",
+                    "type": ["null", "string"],
+                    "title": "The to_pincode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "142321"
+                    ]
+                },
+                "to_address_id": {
+                    "$id": "#/properties/info/properties/to_address_id",
+                    "type": ["null", "string"],
+                    "title": "The to_address_id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        28820456
+                    ]
+                },
+                "to_email": {
+                    "$id": "#/properties/info/properties/to_email",
+                    "type": ["null", "string"],
+                    "title": "The to_email schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "from_email": {
+                    "$id": "#/properties/info/properties/from_email",
+                    "type": ["null", "string"],
+                    "title": "The from_email schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "to_city": {
+                    "$id": "#/properties/info/properties/to_city",
+                    "type": ["null", "string"],
+                    "title": "The to_city schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Lasvegas"
+                    ]
+                },
+                "source_address_id": {
+                    "$id": "#/properties/info/properties/source_address_id",
+                    "type": ["null", "string"],
+                    "title": "The source_address_id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0,
+                    "examples": [
+                        320432
+                    ]
+                },
+                "to_name": {
+                    "$id": "#/properties/info/properties/to_name",
+                    "type": ["null", "string"],
+                    "title": "The to_name schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "from_phone_number": {
+                    "$id": "#/properties/info/properties/from_phone_number",
+                    "type": ["null", "string"],
+                    "title": "The from_phone_number schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "12345678890"
+                    ]
+                },
+                "from_city": {
+                    "$id": "#/properties/info/properties/from_city",
+                    "type": ["null", "string"],
+                    "title": "The from_city schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "denwar"
+                    ]
+                },
+                "user_id": {
+                    "$id": "#/properties/info/properties/user_id",
+                    "type":["null", "string"],
+                    "title": "The user_id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null,
+                    "examples": [
+                        null
+                    ]
+                },
+                "cod_amount": {
+                    "$id": "#/properties/info/properties/cod_amount",
+                    "type": ["null", "string"],
+                    "title": "The cod_amount schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": 0.0,
+                    "examples": [
+                        0.0
+                    ]
+                },
+                "is_open_ndr": {
+                    "$id": "#/properties/info/properties/is_open_ndr",
+                    "type": ["null", "string"],
+                    "title": "The is_open_ndr schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                        false
+                    ]
+                },
+                "to_phone_number": {
+                    "$id": "#/properties/info/properties/to_phone_number",
+                    "type": ["null", "string"],
+                    "title": "The to_phone_number schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "from_pincode": {
+                    "$id": "#/properties/info/properties/from_pincode",
+                    "type": ["null", "string"],
+                    "title": "The from_pincode schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "122346"
+                    ]
+                },
+                "from_address": {
+                    "$id": "#/properties/info/properties/from_address",
+                    "type": ["null", "string"],
+                    "title": "The from_address schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Maplemonk India, Kalajyothi Rd, Hydrabad, Andhara Pradesh"
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "is_cod": {
+            "$id": "#/properties/is_cod",
+            "type": ["null", "string"],
+            "title": "The is_cod schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                false
+            ]
+        },
+        "is_reverse": {
+            "$id": "#/properties/is_reverse",
+            "type": ["null", "string"],
+            "title": "The is_reverse schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                false
+            ]
+        },
+        "item_list": {
+            "$id": "#/properties/item_list",
+            "type": ["null", "array"],
+            "title": "The item_list schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/item_list/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/item_list/items/anyOf/0",
+                        "type": ["null", "object"],
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "properties": {
+                            "sku": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/sku",
+                                "type": ["null", "string"],
+                                "title": "The sku schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "SEED-FLAX-300G"
+                                ]
+                            },
+                            "item_tax_percentage": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/item_tax_percentage",
+                                "type": ["null", "string"],
+                                "title": "The item_tax_percentage schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    0
+                                ]
+                            },
+                            "item_height": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/item_height",
+                                "type":["null", "string"],
+                                "title": "The item_height schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": null,
+                                "examples": [
+                                    null
+                                ]
+                            },
+                            "name": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/name",
+                                "type":["null", "string"],
+                                "title": "The name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": null,
+                                "examples": [
+                                    null
+                                ]
+                            },
+                            "item_name": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/item_name",
+                                "type": ["null", "string"],
+                                "title": "The item_name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Organic Roasted Flax Seed (Good Source of Omega-3 & Dietary Fibers), 300gms"
+                                ]
+                            },
+                            "price": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/price",
+                                "type": ["null", "string"],
+                                "title": "The price schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0.0,
+                                "examples": [
+                                    74.5
+                                ]
+                            },
+                            "item_weight": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/item_weight",
+                                "type":["null", "string"],
+                                "title": "The item_weight schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": null,
+                                "examples": [
+                                    null
+                                ]
+                            },
+                            "hsn": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/hsn",
+                                "type":["null", "string"],
+                                "title": "The hsn schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": null,
+                                "examples": [
+                                    null
+                                ]
+                            },
+                            "shipping_charge": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/shipping_charge",
+                                "type":["null", "string"],
+                                "title": "The shipping_charge schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": null,
+                                "examples": [
+                                    null
+                                ]
+                            },
+                            "tax_per": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/tax_per",
+                                "type": ["null", "string"],
+                                "title": "The tax_per schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    0
+                                ]
+                            },
+                            "variant_title": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/variant_title",
+                                "type":["null", "string"],
+                                "title": "The variant_title schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": null,
+                                "examples": [
+                                    null
+                                ]
+                            },
+                            "quantity": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/quantity",
+                                "type": ["null", "string"],
+                                "title": "The quantity schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "item_breadth": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/item_breadth",
+                                "type":["null", "string"],
+                                "title": "The item_breadth schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": null,
+                                "examples": [
+                                    null
+                                ]
+                            },
+                            "item_length": {
+                                "$id": "#/properties/item_list/items/anyOf/0/properties/item_length",
+                                "type":["null", "string"],
+                                "title": "The item_length schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": null,
+                                "examples": [
+                                    null
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "item_tax_percentage": {
+            "$id": "#/properties/item_tax_percentage",
+            "type": ["null", "string"],
+            "title": "The item_tax_percentage schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "0"
+            ]
+        },
+        "length": {
+            "$id": "#/properties/length",
+            "type": ["null", "string"],
+            "title": "The length schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                10
+            ]
+        },
+        "logo": {
+            "$id": "#/properties/logo",
+            "type":["null", "string"],
+            "title": "The logo schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": null,
+            "examples": [
+                null
+            ]
+        },
+        "order_created_at": {
+            "$id": "#/properties/order_created_at",
+            "type": ["null", "string"],
+            "title": "The order_created_at schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2021-09-28T10:12:02"
+            ]
+        },
+        "order_type": {
+            "$id": "#/properties/order_type",
+            "type": ["null", "string"],
+            "title": "The order_type schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Surface"
+            ]
+        },
+        "pickrr_order_id": {
+            "$id": "#/properties/pickrr_order_id",
+            "type": ["null", "string"],
+            "title": "The pickrr_order_id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "29008716"
+            ]
+        },
+        "product_name": {
+            "$id": "#/properties/product_name",
+            "type": ["null", "string"],
+            "title": "The product_name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Paracetamol Medicine "
+            ]
+        },
+        "quantity": {
+            "$id": "#/properties/quantity",
+            "type": ["null", "string"],
+            "title": "The quantity schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                3
+            ]
+        },
+        "sku": {
+            "$id": "#/properties/sku",
+            "type": ["null", "string"],
+            "title": "The sku schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "PARA-FLAX-300G"
+            ]
+        },
+        "status": {
+            "$id": "#/properties/status",
+            "type": ["null", "object"],
+            "title": "The status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "current_status_time": "04 Oct 2021, 06:19",
+                    "current_status_type": "DL",
+                    "received_by": null,
+                    "current_status_body": "Delivered to consignee - OTP Verified delivery",
+                    "current_status_location": "Patiala_city (Amb)",
+                    "current_status_val": null
+                }
+            ],
+            "properties": {
+                "current_status_time": {
+                    "$id": "#/properties/status/properties/current_status_time",
+                    "type": ["null", "string"],
+                    "title": "The current_status_time schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "04 Oct 2021, 06:19"
+                    ]
+                },
+                "current_status_type": {
+                    "$id": "#/properties/status/properties/current_status_type",
+                    "type": ["null", "string"],
+                    "title": "The current_status_type schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "DL"
+                    ]
+                },
+                "received_by": {
+                    "$id": "#/properties/status/properties/received_by",
+                    "type":["null", "string"],
+                    "title": "The received_by schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null,
+                    "examples": [
+                        null
+                    ]
+                },
+                "current_status_body": {
+                    "$id": "#/properties/status/properties/current_status_body",
+                    "type": ["null", "string"],
+                    "title": "The current_status_body schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Delivered to consignee - OTP Verified delivery"
+                    ]
+                },
+                "current_status_location": {
+                    "$id": "#/properties/status/properties/current_status_location",
+                    "type": ["null", "string"],
+                    "title": "The current_status_location schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Patiala_city (Amb)"
+                    ]
+                },
+                "current_status_val": {
+                    "$id": "#/properties/status/properties/current_status_val",
+                    "type":["null", "string"],
+                    "title": "The current_status_val schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null,
+                    "examples": [
+                        null
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "track_arr": {
+            "$id": "#/properties/track_arr",
+            "type": ["null", "array"],
+            "title": "The track_arr schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "status_name": "OM",
+                        "status_array": [
+                            {
+                                "status_body": "Consignment Manifested",
+                                "status_time": "28 Sep 2021, 10:12",
+                                "pickrr_status": "Order Manifested",
+                                "status_location": "Delhi_Airport_GW (Delhi)",
+                                "courier_status_code": "X-UCI_UD",
+                                "pickrr_sub_status_code": ""
+                            }
+                        ]
+                    },
+                    {
+                        "status_name": "PPF",
+                        "status_array": [
+                            {
+                                "status_body": "Pickup not attempted",
+                                "status_time": "28 Sep 2021, 18:26",
+                                "pickrr_status": "Pickup Failed",
+                                "status_location": "Delhi_Airport_GW (Delhi)",
+                                "courier_status_code": "FMEOD-106_UD",
+                                "pickrr_sub_status_code": "NA"
+                            }
+                        ]
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/track_arr/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/track_arr/items/anyOf/0",
+                        "type": ["null", "object"],
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "properties": {
+                            "status_name": {
+                                "$id": "#/properties/track_arr/items/anyOf/0/properties/status_name",
+                                "type": ["null", "string"],
+                                "title": "The status_name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "OM"
+                                ]
+                            },
+                            "status_array": {
+                                "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array",
+                                "type": ["null", "array"],
+                                "title": "The status_array schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": [],
+                                "additionalItems": true,
+                                "items": {
+                                    "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array/items",
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array/items/anyOf/0",
+                                            "type": ["null", "object"],
+                                            "title": "The first anyOf schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": {},
+                                            "properties": {
+                                                "status_body": {
+                                                    "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array/items/anyOf/0/properties/status_body",
+                                                    "type": ["null", "string"],
+                                                    "title": "The status_body schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "Consignment Manifested"
+                                                    ]
+                                                },
+                                                "status_time": {
+                                                    "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array/items/anyOf/0/properties/status_time",
+                                                    "type": ["null", "string"],
+                                                    "title": "The status_time schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "28 Sep 2021, 10:12"
+                                                    ]
+                                                },
+                                                "pickrr_status": {
+                                                    "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array/items/anyOf/0/properties/pickrr_status",
+                                                    "type": ["null", "string"],
+                                                    "title": "The pickrr_status schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "Order Manifested"
+                                                    ]
+                                                },
+                                                "status_location": {
+                                                    "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array/items/anyOf/0/properties/status_location",
+                                                    "type": ["null", "string"],
+                                                    "title": "The status_location schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "Delhi_Airport_GW (Delhi)"
+                                                    ]
+                                                },
+                                                "courier_status_code": {
+                                                    "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array/items/anyOf/0/properties/courier_status_code",
+                                                    "type": ["null", "string"],
+                                                    "title": "The courier_status_code schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        "X-UCI_UD"
+                                                    ]
+                                                },
+                                                "pickrr_sub_status_code": {
+                                                    "$id": "#/properties/track_arr/items/anyOf/0/properties/status_array/items/anyOf/0/properties/pickrr_sub_status_code",
+                                                    "type": ["null", "string"],
+                                                    "title": "The pickrr_sub_status_code schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": "",
+                                                    "examples": [
+                                                        ""
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": true
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "tracking_id": {
+            "$id": "#/properties/tracking_id",
+            "type": ["null", "string"],
+            "title": "The tracking_id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "15315164004323"
+            ]
+        },
+        "web_address": {
+            "$id": "#/properties/web_address",
+            "type": ["null", "string"],
+            "title": "The web_address schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "weight": {
+            "$id": "#/properties/weight",
+            "type": ["null", "string"],
+            "title": "The weight schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0.0,
+            "examples": [
+                1.28
+            ]
+        },
+        "billing_zone": {
+            "$id": "#/properties/billing_zone",
+            "type": ["null", "string"],
+            "title": "The billing_zone schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "show_details": {
+            "$id": "#/properties/show_details",
+            "type": ["null", "string"],
+            "title": "The show_details schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                false
+            ]
+        }
+    },
+    "additionalProperties": true
+}
