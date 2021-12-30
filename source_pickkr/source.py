@@ -13,12 +13,7 @@ import copy
 from airbyte_cdk.logger import AirbyteLogger
 from airbyte_cdk.sources import AbstractSource
 from airbyte_cdk.models import (
-    AirbyteCatalog,
-    AirbyteConnectionStatus,
     AirbyteMessage,
-    AirbyteRecordMessage,
-    AirbyteStateMessage,
-    AirbyteStream,
     ConfiguredAirbyteCatalog,
     ConfiguredAirbyteStream,
     SyncMode,
@@ -133,17 +128,17 @@ class GetTrackingID:
         if(self.snowflakeConn != None):
             # Connection is Established, Now We can querry
             # print("TESTING ", 'SELECT * FROM "{}"."{}"."{}" WHERE {} ILIKE '.format(self.config["database"], self.config["source_schema"], self.config["source_table"], self.config["column_name"]) + "'%pickrr%'")
-            print(self.config["test"], self.config["test"].name)
+            # print(self.config["test"], self.config["test"].name)
             sqlScript = 'SELECT * FROM "{}"."{}"."{}" WHERE {} ILIKE '.format(self.config["database"], self.config["source_schema"], self.config["source_table"], self.config["column_name"]) + "'%pickrr%'"
-            if(self.config["test"].name == 'incremental'):
-                currentServerDate = datetime.datetime.today()
-                pastServerDate = currentServerDate - datetime.timedelta(45)
-                currServerDateString = currentServerDate.strftime("%Y-%m-%dT") + "00:00:00Z"
-                pastServerDateString = pastServerDate.strftime("%Y-%m-%dT") + "00:00:00Z"
-                print("Previous Date {} Current Date {}".format(pastServerDateString, currServerDateString))
-                # sqlScript = 'SELECT * FROM "{}"."{}"."{}" WHERE {} ILIKE '.format(self.config["database"], self.config["source_schema"], self.config["source_table"], self.config["column_name"]) + "'%pickrr%'" + ' and to_date(CREATED_AT) > to_date(' + "'2021-10-25T12:00:00Z'" + ') and to_date(CREATED_AT) < to_date(' + "'2021-11-26T12:00:00Z'" + ') order by CREATED_AT '
-                # print("Previous SqlScript :", sqlScript)
-                sqlScript = 'SELECT * FROM "{}"."{}"."{}" WHERE {} ILIKE '.format(self.config["database"], self.config["source_schema"], self.config["source_table"], self.config["column_name"]) + "'%pickrr%'" + ' and to_date(CREATED_AT) > to_date(' + f"'{pastServerDateString}'" + ') and to_date(CREATED_AT) < to_date(' + f"'{currServerDateString}'" + ') order by CREATED_AT '
+            # if(self.config["test"].name == 'incremental'):
+            #     currentServerDate = datetime.datetime.today()
+            #     pastServerDate = currentServerDate - datetime.timedelta(45)
+            #     currServerDateString = currentServerDate.strftime("%Y-%m-%dT") + "00:00:00Z"
+            #     pastServerDateString = pastServerDate.strftime("%Y-%m-%dT") + "00:00:00Z"
+            #     print("Previous Date {} Current Date {}".format(pastServerDateString, currServerDateString))
+            #     # sqlScript = 'SELECT * FROM "{}"."{}"."{}" WHERE {} ILIKE '.format(self.config["database"], self.config["source_schema"], self.config["source_table"], self.config["column_name"]) + "'%pickrr%'" + ' and to_date(CREATED_AT) > to_date(' + "'2021-10-25T12:00:00Z'" + ') and to_date(CREATED_AT) < to_date(' + "'2021-11-26T12:00:00Z'" + ') order by CREATED_AT '
+            #     # print("Previous SqlScript :", sqlScript)
+            #     sqlScript = 'SELECT * FROM "{}"."{}"."{}" WHERE {} ILIKE '.format(self.config["database"], self.config["source_schema"], self.config["source_table"], self.config["column_name"]) + "'%pickrr%'" + ' and to_date(CREATED_AT) > to_date(' + f"'{pastServerDateString}'" + ') and to_date(CREATED_AT) < to_date(' + f"'{currServerDateString}'" + ') order by CREATED_AT '
 
             print(sqlScript)
             data = self.snowService.executeQuerry(sqlScript)
@@ -290,86 +285,6 @@ class GetOrdersByIds(ChildSubstream):
         return None
 
 class SourcePickkr(AbstractSource):
-
-    def _read_incremental(
-        self, stream_instance: Stream, configured_stream: ConfiguredAirbyteStream, internal_config: InternalConfig
-    ) -> Iterator[AirbyteMessage]:
-        slices = stream_instance.stream_slices(sync_mode=SyncMode.full_refresh, cursor_field=configured_stream.cursor_field)
-        total_records_counter = 0
-        for slice in slices:
-            records = stream_instance.read_records(
-                stream_slice=slice, sync_mode=SyncMode.full_refresh, cursor_field=configured_stream.cursor_field
-            )
-            for record in records:
-                yield self._as_airbyte_record(configured_stream.stream.name, record)
-                total_records_counter += 1
-                if self._limit_reached(internal_config, total_records_counter):
-                    return
-    
-    def read(
-        self, logger: AirbyteLogger, config: Mapping[str, Any], catalog: ConfiguredAirbyteCatalog, state: MutableMapping[str, Any] = None
-    ) -> Iterator[AirbyteMessage]:
-        """Implements the Read operation from the Airbyte Specification. See https://docs.airbyte.io/architecture/airbyte-specification."""
-        connector_state = copy.deepcopy(state or {})
-        logger.info(f"Starting syncing {self.name}")
-        config, internal_config = split_config(config)
-        # TODO assert all streams exist in the connector
-        # get the streams once in case the connector needs to make any queries to generate them
-        stream_instances = {s.name: s for s in self.streams(config)}
-        self._stream_to_instance_map = stream_instances
-        self.testConfig = catalog.streams[0].sync_mode
-        config['test'] = catalog.streams[0].sync_mode
-        print(self.testConfig)
-        with create_timer(self.name) as timer:
-            for configured_stream in catalog.streams:
-                stream_instance = stream_instances.get(configured_stream.stream.name)
-                if not stream_instance:
-                    raise KeyError(
-                        f"The requested stream {configured_stream.stream.name} was not found in the source. Available streams: {stream_instances.keys()}"
-                    )
-                try:
-                    yield from self._read_stream(
-                        logger=logger,
-                        stream_instance=stream_instance,
-                        configured_stream=configured_stream,
-                        connector_state=connector_state,
-                        internal_config=internal_config,
-                    )
-                except Exception as e:
-                    logger.exception(f"Encountered an exception while reading stream {self.name}")
-                    raise e
-                finally:
-                    logger.info(f"Finished syncing {self.name}")
-                    logger.info(timer.report())
-        logger.info(f"Finished syncing {self.name}")
-
-    def _read_stream(
-        self,
-        logger: AirbyteLogger,
-        stream_instance: Stream,
-        configured_stream: ConfiguredAirbyteStream,
-        connector_state: MutableMapping[str, Any],
-        internal_config: InternalConfig,
-    ) -> Iterator[AirbyteMessage]:
-        if internal_config.page_size and isinstance(stream_instance, HttpStream):
-            logger.info(f"Setting page size for {stream_instance.name} to {internal_config.page_size}")
-            stream_instance.page_size = internal_config.page_size
-        self.typeofIncremental = configured_stream.sync_mode
-        use_incremental = configured_stream.sync_mode == SyncMode.incremental and stream_instance.supports_incremental
-        if use_incremental:
-            # record_iterator = self._read_incremental(logger, stream_instance, configured_stream, connector_state, internal_config)
-            record_iterator = self._read_incremental(stream_instance, configured_stream, internal_config)
-        else:
-            record_iterator = self._read_full_refresh(stream_instance, configured_stream, internal_config)
-        record_counter = 0
-        stream_name = configured_stream.stream.name
-        logger.info(f"Syncing stream: {stream_name} ")
-        for record in record_iterator:
-            if record.type == MessageType.RECORD:
-                record_counter += 1
-            yield record
-        logger.info(f"Read {record_counter} records from {stream_name} stream")
-
     def check_connection(self, logger, config) -> Tuple[bool, any]:
         self.config = config
         self.snowService =  SnowflakeService(user=self.config["snowflake_username"],

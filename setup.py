@@ -7,6 +7,8 @@ from setuptools import find_packages, setup
 
 MAIN_REQUIREMENTS = [
     "airbyte-cdk~=0.1",
+    "pyarrow~=3.0.0",
+    "snowflake-connector-python"
 ]
 
 TEST_REQUIREMENTS = [
